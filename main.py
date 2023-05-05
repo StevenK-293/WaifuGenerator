@@ -1,7 +1,11 @@
 import requests
 
-genre = 'waifu'
-nsfw = False # False or True if you want NSFW
+genres = ['waifu', 'neko', 'shinobu', 'megumin', 'bully', 'cuddle', 'cry', 'hug', 'awoo', 'kiss', 'lick', 'pat', 'smug', 'bonk', 'yeet', 'blush', 'smile', 'wave', 'highfive', 'handhold', 'nom', 'bite', 'glomp', 'slap', 'kill', 'kick', 'happy', 'wink', 'poke']
+
+nsfw = False # True or False if you want NSFW
+
+# Choose a random genre from the list
+genre = genres[random.randint(0, len(genres)-1)]
 
 # Construct the API endpoint URL based on the specified genre and NSFW level
 if nsfw:
