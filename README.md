@@ -15,7 +15,7 @@
 
 <h1 align="center"><strong>Important</strong></h1>
 
-- Please ensure that you only use either the `index.html` or `main.py` file separately. Attempting to use both files together will cause compatibility issues and the program will not function correctly.
+- Please ensure that you only use either the `index.html` or `main.py` and other file separately. Attempting to use both files together will cause compatibility issues and the program will not function correctly.
 
 <h1 align="center"><strong>Proof</strong></h1>
 
