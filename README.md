@@ -1,6 +1,10 @@
 # WaifuGenerator
 Just Generates Waifu with a api
 
+- Made 2 Different Waifu Generator
+1st: `main.py`
+2nd: `index.js`
+
 ## Proof?
 it works on replit :]
 
