@@ -5,12 +5,13 @@
 
 <h1 align="center"><strong>Versions</strong></h1>
 
-- There are two different versions of the Waifu Generator available: 
+- There are 3 different versions of the Waifu Generator available: 
 
-1st: `main.py`
+1st: `main.py` file
 
-2nd: `index.html`
+2nd: `index.html` file
 
+3rd: `WaifuGenerator3` Folder
 
 <h1 align="center"><strong>Important</strong></h1>
 
