@@ -1,11 +1,23 @@
-# WaifuGenerator
-Just Generates Waifu with a api
+<h1 align="center"><strong>Waifu Generator</strong></h1>
 
-- Made 2 Different Waifu Generator
+- This project is a Waifu Generator that utilizes an API to generate waifus.
+
+
+<h1 align="center"><strong>Versions</strong></h1>
+
+- There are two different versions of the Waifu Generator available: 
+
 1st: `main.py`
+
 2nd: `index.html`
 
-## Proof?
+
+<h1 align="center"><strong>Important</strong></h1>
+
+- Please ensure that you only use either the `index.html` or `main.py` file separately. Attempting to use both files together will cause compatibility issues and the program will not function correctly.
+
+<h1 align="center"><strong>Proof</strong></h1>
+
 it works on replit :]
 
 
