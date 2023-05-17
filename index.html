@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Waifu Image Generator</title>
+  <style>
+    body {
+      background-color: darkgray;
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    #waifu-image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .generate-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .generate-button:hover {
+      background-color: #45a049;
+    }
+
+    .dropdown {
+      display: inline-block;
+      position: relative;
+    }
+
+    .dropdown-select {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #f9f9f9;
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      z-index: 1;
+      animation: fade 0.3s;
+    }
+
+    .dropdown-select.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+  <script>
+    function generateImage() {
+      const dropdown = document.getElementById("tags-dropdown");
+      const selectedTag = dropdown.value;
+      const apiType = document.querySelector('input[name="api-type"]:checked').value;
+
+      const apiUrl = `https://api.waifu.pics/${apiType}/${selectedTag}`;
+
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const imageUrl = data.url;
+          const waifuImage = document.getElementById("waifu-image");
+          waifuImage.src = imageUrl;
+        })
+        .catch(error => {
+          console.log("Failed to fetch image:", error);
+        });
+    }
+
+    function toggleTagDropdown() {
+      const nsfwDropdown = document.getElementById("nsfw-dropdown");
+      const sfwDropdown = document.getElementById("sfw-dropdown");
+      const apiType = document.querySelector('input[name="api-type"]:checked').value;
+
+      if (apiType === "nsfw") {
+        nsfwDropdown.style.display = "block";
+        sfwDropdown.style.display = "none";
+      } else {
+        nsfwDropdown.style.display = "none";
+        sfwDropdown.style.display = "block";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Waifu Image Generator</h1>
+  <div>
+    <label for="tags-dropdown">Select a tag:</label>
+    <div id="sfw-dropdown">
+      <select id="tags-dropdown">
+        <option value="waifu">waifu</option>
+        <option value="neko">neko</option>
+        <option value="shinobu">shinobu</option>
+        <option value="megumin">megumin</option>
+        <option value="bully">bully</option>
+        <option value="cuddle">cuddle</option>
+        <option value="cry">cry</option>
+        <option value="hug">hug</option>
+        <option value="awoo">awoo</option>
+        <option value="kiss">kiss</option>
+        <option value="lick">lick</option>
+        <option value="pat">pat</option>
+        <option value="smug">smug</option>
+        <option value="bonk">bonk</option>
+        <option value="yeet">yeet</option>
+        <option value="blush">blush</option>
+        <option value="smile">smile</option>
+        <option value="wave">wave</option>
+        <option value="highfive">highfive</option>
+        <option value="handhold">handhold</option>
+        <option value="nom">nom</option>
+        <option value="bite">bite</option>
+        <option value="glomp">glomp</option>
+        <option value="slap">slap</option>
+        <option value="kill">kill</option>
+        <option value="kick">kick</option>
+        <option value="happy">happy</option>
+        <option value="wink">wink</option>
+        <option value="poke">poke</option>
+        <option value="dance">dance</option>
+        <option value="cringe">cringe</option>
+      </select>
+    </div>
+    <div id="nsfw-dropdown" style="display: none;">
+      <select id="tags-dropdown">
+        <option value="waifu">waifu</option>
+        <option value="neko">neko</option>
+        <option value="trap">trap</option>
+        <option value="blowjob">blowjob</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <input type="radio" id="api-type-nsfw" name="api-type" value="nsfw" onchange="toggleTagDropdown()">
+    <label for="api-type-nsfw">NSFW(Broken lol not fixing it)</label>
+    <input type="radio" id="api-type-sfw" name="api-type" value="sfw" checked onchange="toggleTagDropdown()">
+    <label for="api-type-sfw">SFW</label>
+  </div>
+  <br>
+  <button onclick="generateImage()" class="generate-button">Generate Waifu Image</button>
+  <div id="image-container">
+    <img id="waifu-image" src="" alt="Waifu Image">
+  </div>
+</body>
+
+</html>
