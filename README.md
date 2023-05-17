@@ -3,7 +3,7 @@ Just Generates Waifu with a api
 
 - Made 2 Different Waifu Generator
 1st: `main.py`
-2nd: `index.js`
+2nd: `index.html`
 
 ## Proof?
 it works on replit :]
