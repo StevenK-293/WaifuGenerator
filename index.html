@@ -66,11 +66,17 @@
   </style>
   <script>
     function generateImage() {
-      const dropdown = document.getElementById("tags-dropdown");
-      const selectedTag = dropdown.value;
+      const sfwDropdown = document.getElementById("sfw-tags-dropdown");
+      const nsfwDropdown = document.getElementById("nsfw-tags-dropdown");
+      const selectedTag = (document.querySelector('input[name="api-type"]:checked').value === "nsfw") ? nsfwDropdown.value : sfwDropdown.value;
       const apiType = document.querySelector('input[name="api-type"]:checked').value;
 
-      const apiUrl = `https://api.waifu.pics/${apiType}/${selectedTag}`;
+      let apiUrl;
+      if (apiType === "nsfw") {
+        apiUrl = `https://api.waifu.pics/nsfw/${selectedTag}`;
+      } else {
+        apiUrl = `https://api.waifu.pics/sfw/${selectedTag}`;
+      }
 
       fetch(apiUrl)
         .then(response => response.json())
@@ -105,7 +111,7 @@
   <div>
     <label for="tags-dropdown">Select a tag:</label>
     <div id="sfw-dropdown">
-      <select id="tags-dropdown">
+      <select id="sfw-tags-dropdown">
         <option value="waifu">waifu</option>
         <option value="neko">neko</option>
         <option value="shinobu">shinobu</option>
@@ -140,7 +146,7 @@
       </select>
     </div>
     <div id="nsfw-dropdown" style="display: none;">
-      <select id="tags-dropdown">
+      <select id="nsfw-tags-dropdown">
         <option value="waifu">waifu</option>
         <option value="neko">neko</option>
         <option value="trap">trap</option>
@@ -150,7 +156,7 @@
   </div>
   <div>
     <input type="radio" id="api-type-nsfw" name="api-type" value="nsfw" onchange="toggleTagDropdown()">
-    <label for="api-type-nsfw">NSFW(Broken lol not fixing it)</label>
+    <label for="api-type-nsfw">NSFW</label>
     <input type="radio" id="api-type-sfw" name="api-type" value="sfw" checked onchange="toggleTagDropdown()">
     <label for="api-type-sfw">SFW</label>
   </div>
