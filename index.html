@@ -5,41 +5,65 @@
   <title>Waifu Image Generator</title>
   <style>
     body {
-      background-color: darkgray;
+      background-color: #757575;
       font-family: Arial, sans-serif;
-      margin: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
     }
 
     #waifu-image {
       max-width: 100%;
       height: auto;
+      display: none;
+      margin-top: 20px;
     }
 
     .generate-button {
-      background-color: #4CAF50;
+      display: block;
+      margin: 0 auto;
+      background-color: #AD4BB0;
       color: white;
       padding: 10px 20px;
       border: none;
       border-radius: 4px;
       cursor: pointer;
       font-size: 16px;
+      font-weight: bold;
       transition: background-color 0.3s ease;
     }
 
     .generate-button:hover {
-      background-color: #45a049;
+      background-color: #961BE8;
     }
 
     .dropdown {
-      display: inline-block;
       position: relative;
+      margin-bottom: 20px;
+      animation: fade-in 0.5s ease-in-out;
+    }
+
+    .dropdown-label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
     }
 
     .dropdown-select {
-      display: none;
       position: absolute;
       top: 100%;
       left: 0;
+      opacity: 0;
+      visibility: hidden;
       background-color: #f9f9f9;
       width: 100%;
       padding: 5px;
@@ -47,7 +71,7 @@
       border-radius: 4px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
       z-index: 1;
-      animation: fade 0.3s;
+      animation: fade-in 0.3s ease-in-out;
     }
 
     .dropdown-select.active {
@@ -84,6 +108,7 @@
           const imageUrl = data.url;
           const waifuImage = document.getElementById("waifu-image");
           waifuImage.src = imageUrl;
+          waifuImage.style.display = "block";
         })
         .catch(error => {
           console.log("Failed to fetch image:", error);
@@ -107,63 +132,65 @@
 </head>
 
 <body>
-  <h1>Waifu Image Generator</h1>
-  <div>
-    <label for="tags-dropdown">Select a tag:</label>
-    <div id="sfw-dropdown">
-      <select id="sfw-tags-dropdown">
-        <option value="waifu">waifu</option>
-        <option value="neko">neko</option>
-        <option value="shinobu">shinobu</option>
-        <option value="megumin">megumin</option>
-        <option value="bully">bully</option>
-        <option value="cuddle">cuddle</option>
-        <option value="cry">cry</option>
-        <option value="hug">hug</option>
-        <option value="awoo">awoo</option>
-        <option value="kiss">kiss</option>
-        <option value="lick">lick</option>
-        <option value="pat">pat</option>
-        <option value="smug">smug</option>
-        <option value="bonk">bonk</option>
-        <option value="yeet">yeet</option>
-        <option value="blush">blush</option>
-        <option value="smile">smile</option>
-        <option value="wave">wave</option>
-        <option value="highfive">highfive</option>
-        <option value="handhold">handhold</option>
-        <option value="nom">nom</option>
-        <option value="bite">bite</option>
-        <option value="glomp">glomp</option>
-        <option value="slap">slap</option>
-        <option value="kill">kill</option>
-        <option value="kick">kick</option>
-        <option value="happy">happy</option>
-        <option value="wink">wink</option>
-        <option value="poke">poke</option>
-        <option value="dance">dance</option>
-        <option value="cringe">cringe</option>
-      </select>
+  <div class="container">
+    <h1>Waifu Image Generator</h1>
+    <div class="dropdown">
+      <label for="tags-dropdown" class="dropdown-label">Select a tag:</label>
+      <div id="sfw-dropdown">
+        <select id="sfw-tags-dropdown">
+          <option value="waifu">waifu</option>
+          <option value="neko">neko</option>
+          <option value="shinobu">shinobu</option>
+          <option value="megumin">megumin</option>
+          <option value="bully">bully</option>
+          <option value="cuddle">cuddle</option>
+          <option value="cry">cry</option>
+          <option value="hug">hug</option>
+          <option value="awoo">awoo</option>
+          <option value="kiss">kiss</option>
+          <option value="lick">lick</option>
+          <option value="pat">pat</option>
+          <option value="smug">smug</option>
+          <option value="bonk">bonk</option>
+          <option value="yeet">yeet</option>
+          <option value="blush">blush</option>
+          <option value="smile">smile</option>
+          <option value="wave">wave</option>
+          <option value="highfive">highfive</option>
+          <option value="handhold">handhold</option>
+          <option value="nom">nom</option>
+          <option value="bite">bite</option>
+          <option value="glomp">glomp</option>
+          <option value="slap">slap</option>
+          <option value="kill">kill</option>
+          <option value="kick">kick</option>
+          <option value="happy">happy</option>
+          <option value="wink">wink</option>
+          <option value="poke">poke</option>
+          <option value="dance">dance</option>
+          <option value="cringe">cringe</option>
+        </select>
+      </div>
+      <div id="nsfw-dropdown" style="display: none;">
+        <select id="nsfw-tags-dropdown">
+          <option value="waifu">waifu</option>
+          <option value="neko">neko</option>
+          <option value="trap">trap</option>
+          <option value="blowjob">blowjob</option>
+        </select>
+      </div>
     </div>
-    <div id="nsfw-dropdown" style="display: none;">
-      <select id="nsfw-tags-dropdown">
-        <option value="waifu">waifu</option>
-        <option value="neko">neko</option>
-        <option value="trap">trap</option>
-        <option value="blowjob">blowjob</option>
-      </select>
+    <div>
+      <input type="radio" id="api-type-nsfw" name="api-type" value="nsfw" onchange="toggleTagDropdown()">
+      <label for="api-type-nsfw">NSFW</label>
+      <input type="radio" id="api-type-sfw" name="api-type" value="sfw" checked onchange="toggleTagDropdown()">
+      <label for="api-type-sfw">SFW</label>
     </div>
-  </div>
-  <div>
-    <input type="radio" id="api-type-nsfw" name="api-type" value="nsfw" onchange="toggleTagDropdown()">
-    <label for="api-type-nsfw">NSFW</label>
-    <input type="radio" id="api-type-sfw" name="api-type" value="sfw" checked onchange="toggleTagDropdown()">
-    <label for="api-type-sfw">SFW</label>
-  </div>
-  <br>
-  <button onclick="generateImage()" class="generate-button">Generate Waifu Image</button>
-  <div id="image-container">
-    <img id="waifu-image" src="" alt="Waifu Image">
+    <br>
+    <button onclick="generateImage()" class="generate-button">Generate Waifu Image</button>
+    <div id="image-container">
+      <img id="waifu-image" src="" alt="Waifu Image">
+    </div>
   </div>
 </body>
 
