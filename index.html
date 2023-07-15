@@ -15,22 +15,48 @@
       max-width: 600px;
       margin: 0 auto;
       padding: 20px;
-    }
-
-    h1 {
       text-align: center;
     }
 
-    #waifu-image {
-      max-width: 100%;
-      height: auto;
-      display: none;
-      margin-top: 20px;
+    h1 {
+      margin-bottom: 20px;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .dropdown {
+      margin-bottom: 20px;
+    }
+
+    .dropdown-label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .dropdown-select {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+      color: #333333;
+      font-size: 16px;
+    }
+
+    .radio-group {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .radio-label {
+      margin-right: 10px;
+      color: #ffffff;
     }
 
     .generate-button {
-      display: block;
-      margin: 0 auto;
+      display: inline-block;
       background-color: #AD4BB0;
       color: white;
       padding: 10px 20px;
@@ -46,39 +72,19 @@
       background-color: #961BE8;
     }
 
-    .dropdown {
-      position: relative;
-      margin-bottom: 20px;
+    .image-container {
+      margin-top: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
       animation: fade-in 0.5s ease-in-out;
     }
 
-    .dropdown-label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
+    #waifu-image {
+      max-width: 100%;
+      height: auto;
+      display: none;
     }
 
-    .dropdown-select {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      opacity: 0;
-      visibility: hidden;
-      background-color: #f9f9f9;
-      width: 100%;
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-      z-index: 1;
-      animation: fade-in 0.3s ease-in-out;
-    }
-
-    .dropdown-select.active {
-      display: block;
-    }
-
-    @keyframes fade {
+    @keyframes fade-in {
       from {
         opacity: 0;
       }
@@ -137,7 +143,7 @@
     <div class="dropdown">
       <label for="tags-dropdown" class="dropdown-label">Select a tag:</label>
       <div id="sfw-dropdown">
-        <select id="sfw-tags-dropdown">
+        <select id="sfw-tags-dropdown" class="dropdown-select">
           <option value="waifu">waifu</option>
           <option value="neko">neko</option>
           <option value="shinobu">shinobu</option>
@@ -172,7 +178,7 @@
         </select>
       </div>
       <div id="nsfw-dropdown" style="display: none;">
-        <select id="nsfw-tags-dropdown">
+        <select id="nsfw-tags-dropdown" class="dropdown-select">
           <option value="waifu">waifu</option>
           <option value="neko">neko</option>
           <option value="trap">trap</option>
@@ -180,15 +186,14 @@
         </select>
       </div>
     </div>
-    <div>
+    <div class="radio-group">
       <input type="radio" id="api-type-nsfw" name="api-type" value="nsfw" onchange="toggleTagDropdown()">
-      <label for="api-type-nsfw">NSFW</label>
+      <label for="api-type-nsfw" class="radio-label">NSFW</label>
       <input type="radio" id="api-type-sfw" name="api-type" value="sfw" checked onchange="toggleTagDropdown()">
-      <label for="api-type-sfw">SFW</label>
+      <label for="api-type-sfw" class="radio-label">SFW</label>
     </div>
-    <br>
     <button onclick="generateImage()" class="generate-button">Generate Waifu Image</button>
-    <div id="image-container">
+    <div class="image-container">
       <img id="waifu-image" src="" alt="Waifu Image">
     </div>
   </div>
