@@ -18,6 +18,7 @@
 - Please ensure that you only use either the `index.html` or `main.py` and other file separately. Attempting to use other files together will cause compatibility issues and the program will not function correctly.
 
 <h1 align="center"><strong>API</strong></h1>
+
 - Everything on this repository relies on the Waifu.pics API, but I'm currently searching for an alternative API to make it more different.
 
 [Waifu.pics](https://github.com/Waifu-pics/waifu-api)
