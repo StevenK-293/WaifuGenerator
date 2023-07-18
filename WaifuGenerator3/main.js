@@ -1,4 +1,3 @@
-// Get DOM elements
 const randomImage = document.querySelector(".random-image");
 const randomWaifu = document.querySelector(".random-waifu");
 const randomWaifuNsfw = document.querySelector(".random-waifu-nsfw");
@@ -6,53 +5,51 @@ const formSelect = document.querySelector(".form-select");
 const formSelectNsfw = document.querySelector(".form-select-nsfw");
 const nsfwToggle = document.querySelector("#nsfwToggle");
 const imageWrapper = document.querySelector('.image-wrapper');
+const sfwContainer = document.querySelector(".sfw");
+const nsfwContainer = document.querySelector(".nsfw");
+const checkboxNsfw = document.querySelector('input[type=checkbox]');
+const loading = './load.svg';
 
-// Set initial display state
-document.querySelector(".sfw").classList.add("active");
-document.querySelector(".nsfw").classList.remove("active");
+sfwContainer.style.display = "flex";
+nsfwContainer.style.display = "none";
 
-// Add event listeners
 formSelect.addEventListener('change', generateWaifu);
 formSelectNsfw.addEventListener('change', generateWaifu);
-
-let checkboxNsfw = document.querySelector('input[type=checkbox]');
-
-nsfwToggle.addEventListener('change', () => {
-  if (checkboxNsfw.checked) {
-    document.querySelector(".nsfw").classList.add("active");
-    document.querySelector(".sfw").classList.remove("active");
-    generateWaifu();
-  } else {
-    document.querySelector(".sfw").classList.add("active");
-    document.querySelector(".nsfw").classList.remove("active");
-    generateWaifu();
-  }
-});
-
+nsfwToggle.addEventListener('change', toggleNsfwMode);
 randomWaifu.addEventListener("click", generateWaifu);
 randomWaifuNsfw.addEventListener("click", generateWaifu);
 
-// Set loading image
-const loading = './load.png';
-randomImage.src = loading;
+function toggleNsfwMode() {
+  if (checkboxNsfw.checked) {
+    nsfwContainer.style.display = "flex";
+    sfwContainer.style.display = "none";
+  } else {
+    sfwContainer.style.display = "flex";
+    nsfwContainer.style.display = "none";
+  }
+  generateWaifu();
+}
 
-// Generate waifu function
-async function generateWaifu() {
+function generateWaifu() {
   randomImage.src = loading;
-  if (document.querySelector(".sfw").classList.contains("active")) {
-    await fetchWaifu('sfw', formSelect.value);
-  } else if (document.querySelector(".nsfw").classList.contains("active")) {
-    await fetchWaifu('nsfw', formSelectNsfw.value);
+
+  if (sfwContainer.style.display === "flex") {
+    fetchWaifu('sfw', formSelect.value);
+  } else if (nsfwContainer.style.display === "flex") {
+    fetchWaifu('nsfw', formSelectNsfw.value);
   }
 }
 
-// Fetch waifu function
 async function fetchWaifu(type, category) {
-  await fetch(`https://api.waifu.pics/${type}/${category}`)
-    .then(response => response.json())
-    .then(data => {
-      randomImage.src = data.url;
-    });
+  const apiUrl = `https://api.waifu.pics/${type}/${category}`;
+
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    randomImage.src = data.url;
+  } catch (error) {
+    console.error("Error fetching waifu:", error);
+  }
 }
 
 generateWaifu();
