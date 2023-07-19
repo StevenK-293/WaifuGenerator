@@ -7,13 +7,13 @@
 
 - There are 3 different versions of the Waifu Generator available: 
 
-1st: `main.py` file ( Uses Waifu.pics API )
+1st: `main.py` file ( Uses **Waifu.pics** API )
 
-2nd: `index.html` file ( Uses Waifu.pics API )
+2nd: `index.html` file ( Uses **Waifu.pics** API )
 
-3rd: `WaifuGenerator3` Folder ( Uses Waifu.pics API )
+3rd: `WaifuGenerator3` Folder ( Uses **Waifu.pics** API )
 
-rth: `WaifuGenerator4` Folder ( Uses Waifu.im API )
+rth: `WaifuGenerator4` Folder ( Uses **Waifu.im** API )
 
 <h1 align="center"><strong>Important</strong></h1>
 
