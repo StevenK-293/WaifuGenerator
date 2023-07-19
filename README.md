@@ -13,7 +13,7 @@
 
 3rd: `WaifuGenerator3` Folder ( Uses **Waifu.pics** API )
 
-rth: `WaifuGenerator4` Folder ( Uses **Waifu.im** API )
+4th: `WaifuGenerator4` Folder ( Uses **Waifu.im** API )
 
 <h1 align="center"><strong>Important</strong></h1>
 
