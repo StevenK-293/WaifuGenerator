@@ -27,7 +27,7 @@
 
 [Waifu.im](https://github.com/Waifu-im/waifu-api)
 
-<h1 align="center"><strong>Proof</strong></h1>
+<h1 align="center"><strong>Some Image</strong></h1>
 
 it works on replit :]
 
