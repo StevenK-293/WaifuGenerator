@@ -5,7 +5,7 @@
 
 <h1 align="center"><strong>Versions</strong></h1>
 
-- There are 3 different versions of the Waifu Generator available: 
+- There are 4 different versions of the Waifu Generator available: 
 
 1st: `main.py` file ( Uses **Waifu.pics** API )
 
