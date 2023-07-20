@@ -1,29 +1,36 @@
+
 const apiUrl = 'https://api.waifu.im/search';
 const tags = {
   sfw: ['waifu', 'maid', 'marin-kitagawa', 'mori-calliope', 'raiden-shogun', 'oppai', 'selfies', 'uniform'],
-  nsfw: ['ero', 'ass', 'hentai', 'milf', 'oral', 'paizuri', 'ecchi']
+  nsfw: ["ass", "hentai", "milf", "oral", "paizuri", "ecchi", "ero"]
 };
 
 async function fetchTags() {
-  try {
-    const response = await fetch('https://api.waifu.im/tags');
-    if (!response.ok) {
-      throw new Error('Failed to fetch tags: ' + response.status);
+    try {
+      const response = await fetch('https://api.waifu.im/tags');
+      if (!response.ok) {
+        throw new Error('Failed to fetch tags: ' + response.status);
+      }
+      const tagsData = await response.json();
+      const apiTags = tagsData.tags;
+  
+      const tagDropdown = document.getElementById('tag-dropdown');
+      const modeDropdown = document.getElementById('mode-dropdown');
+      const selectedTags = tags[modeDropdown.value];
+  
+      updateTagDropdown(selectedTags);
+      tagDropdown.addEventListener('change', fetchImageByTag);
+      modeDropdown.addEventListener('change', function () {
+        const selectedTags = tags[modeDropdown.value];
+        updateTagDropdown(selectedTags);
+        fetchImageByTag(); // Fetch new image based on the selected mode
+      });
+  
+      fetchImageByTag(); // Fetch initial image on page load
+    } catch (error) {
+      console.error('An error occurred:', error.message);
     }
-    const tagsData = await response.json();
-    const apiTags = tagsData.tags;
-
-    const tagDropdown = document.getElementById('tag-dropdown');
-    const modeDropdown = document.getElementById('mode-dropdown');
-    const selectedTags = tags[modeDropdown.value];
-
-    updateTagDropdown(selectedTags);
-    tagDropdown.addEventListener('change', fetchImageByTag);
-    modeDropdown.addEventListener('change', updateTagsDropdown);
-  } catch (error) {
-    console.error('An error occurred:', error.message);
   }
-}
 
 async function fetchImageByTag() {
   try {
@@ -105,7 +112,7 @@ function createTagElement(tagName) {
   tagElement.classList.add('tag');
   tagElement.textContent = tagName;
   return tagElement;
-}
+} 
 
 function showLoadingState() {
   const refreshButton = document.getElementById('refresh-button');
@@ -126,5 +133,5 @@ function handleRefreshButtonClick() {
 const refreshButton = document.getElementById('refresh-button');
 refreshButton.addEventListener('click', handleRefreshButtonClick);
 
+updateTagDropdown(tags.sfw);
 fetchTags();
-fetchImageByTag();
