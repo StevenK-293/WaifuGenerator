@@ -29,3 +29,17 @@
 It works on replit.
 
 ![image](https://user-images.githubusercontent.com/101320329/236390742-1bdef734-7ea0-42da-876b-c2c0c2c857c7.png)
+
+<h1 align="center"><strong> Developer </strong></h1>
+
+<table>
+  <tr>
+    <td style="align:center;">
+      <a href="https://github.com/YellowGreg">
+        <img src="https://avatars.githubusercontent.com/u/101320329?v=4" height="100" width="100" alt="YellowGreg avatar" />
+        <br>
+        <span>YellowGreg</span>
+      </a>
+    </td>
+  </tr>
+</table>
