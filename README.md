@@ -14,7 +14,7 @@
 
 <h1 align="center"><strong>⚠️ Important ⚠️</strong></h1>
 
-- Please ensure that you only use either the `index.html` or `main.py` and other files separately. Attempting to use other files together will cause compatibility issues, and the program will not function correctly.
+- Please ensure that you only use either the **Folder** separately. Attempting to use other Folder together will cause compatibility issues, and the program will not function correctly.
 
 <h1 align="center"><strong>🌟 API 🌟</strong></h1>
 
