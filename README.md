@@ -24,7 +24,7 @@ The Waifu Generator relies on the following APIs:
 - [Waifu.im API](https://github.com/Waifu-im/waifu-api)
 - [nekos.best API](https://github.com/nekos-best/docs)
 
-> 🌟 I'm currently searching for alternative APIs to make the generator more diverse.
+> 🌟 I'm currently searching for alternative APIs to make the generator more different.
 
 ## 🎨 Developers
 
