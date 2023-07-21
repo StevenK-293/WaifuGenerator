@@ -1,6 +1,6 @@
 <h1 align="center"><strong>Waifu Generator</strong></h1>
 
-- This project is a Waifu Generator that utilizes an API to generate waifus.
+- I built this project, which is a Waifu Generator that uses an API to generate waifus. I have to admit, I made it because I was really bored and wanted to do something fun lol.
 
 
 <h1 align="center"><strong>Versions</strong></h1>
