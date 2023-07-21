@@ -15,17 +15,21 @@
 
 4th: `WaifuGenerator4` Folder ( Uses **Waifu.im** API )
 
+5th: `WaifuGenerator5` Folder ( Uses **nekos.best** API )
+
 <h1 align="center"><strong>Important</strong></h1>
 
 - Please ensure that you only use either the `index.html` or `main.py` and other file separately. Attempting to use other files together will cause compatibility issues and the program will not function correctly.
 
 <h1 align="center"><strong>API</strong></h1>
 
-- Everything on this repository relies on the **Waifu.pics API** and **Waifu.im API**, but I'm currently searching for an alternative API to make it more different.
+- Everything on this repository relies on the **Waifu.pics API**, **Waifu.im API**, and **nekos.best API** but I'm currently searching for an alternative API to make it more different.
 
 [Waifu.pics](https://github.com/Waifu-pics/waifu-api)
 
 [Waifu.im](https://github.com/Waifu-im/waifu-api)
+
+[nekos.best](https://github.com/nekos-best/docs)
 
 <h1 align="center"><strong>Some Image</strong></h1>
 
