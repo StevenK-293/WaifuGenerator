@@ -14,7 +14,7 @@ There are 5 different versions of the Waifu Generator available, each using diff
 4. **WaifuGenerator4** (Uses **Waifu.im API**) - Contains both SFW and NSFW images.
 5. **WaifuGenerator5** (Uses **nekos.best API**) - Contains only SFW images.
 
-> ⚠️ Please ensure that you only use one folder separately. Attempting to use multiple folders together will cause compatibility issues, and the program will not function correctly.
+> ⚠️ Please ensure that you only use one folder separately. Attempting to use multiple folders together will cause issues, and the program will not function correctly.
 
 ## 🌟 APIs
 
@@ -49,7 +49,7 @@ Meet the developers behind this project:
   </tr>
 </table>
 
-Feel free to check out their profiles and show some love for their hard work!
+Feel free to check out our profiles.
 
 ---
 **Note**: Add later
