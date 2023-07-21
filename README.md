@@ -7,15 +7,15 @@
 
 - There are 4 different versions of the Waifu Generator available: 
 
-1st: `WaifuGenerator1` Folder ( Uses **Waifu.pics** API )
+1st: `WaifuGenerator1` Folder ( Uses **Waifu.pics** API ) -- all of it is **SFW** and **NSFW**
 
-2nd: `WaifuGenerator2` Folder ( Uses **Waifu.pics** API )
+2nd: `WaifuGenerator2` Folder ( Uses **Waifu.pics** API ) -- all of it is **SFW** and **NSFW**
 
-3rd: `WaifuGenerator3` Folder ( Uses **Waifu.pics** API )
+3rd: `WaifuGenerator3` Folder ( Uses **Waifu.pics** API ) -- all of it is **SFW** and **NSFW**
 
-4th: `WaifuGenerator4` Folder ( Uses **Waifu.im** API )
+4th: `WaifuGenerator4` Folder ( Uses **Waifu.im** API ) -- all of it is **SFW** and **NSFW**
 
-5th: `WaifuGenerator5` Folder ( Uses **nekos.best** API )
+5th: `WaifuGenerator5` Folder ( Uses **nekos.best** API ) -- all of it is **SFW**
 
 <h1 align="center"><strong>Important</strong></h1>
 
