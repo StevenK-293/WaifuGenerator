@@ -26,6 +26,29 @@ The Waifu Generator relies on the following APIs:
 
 > 🌟 I'm currently searching for alternative APIs to make the generator more different.
 
+## Live Demo
+
+<p align="left">
+  <a href="https://waifugeneratorv3-remake.yellowgreg.repl.co/">
+    <img src="https://img.shields.io/badge/Live%20Demo-Waifu Generator%202-blue?style=for-the-badge&logo=google-chrome&logoColor=white">
+  </a>
+</p>
+<p align="left">
+  <a href="https://waifugenerator-v1.yellowgreg.repl.co/">
+    <img src="https://img.shields.io/badge/Live%20Demo-Waifu Generator%203-blue?style=for-the-badge&logo=google-chrome&logoColor=white">
+  </a>
+</p>
+<p align="left">
+  <a href="https://waifugenerator5.yellowgreg.repl.co/">
+    <img src="https://img.shields.io/badge/Live%20Demo-Waifu Generator%204-blue?style=for-the-badge&logo=google-chrome&logoColor=white">
+  </a>
+</p>
+<p align="left">
+  <a href="https://waifugenerator6.yellowgreg.repl.co/">
+    <img src="https://img.shields.io/badge/Live%20Demo-Waifu Generator%205-blue?style=for-the-badge&logo=google-chrome&logoColor=white">
+  </a>
+</p>
+
 ## 🎨 Developers
 
 Meet the developers behind this project:
@@ -52,4 +75,4 @@ Meet the developers behind this project:
 Feel free to check out our profiles.
 
 ---
-**Note**: Add later
+**Note**: Will Add later
