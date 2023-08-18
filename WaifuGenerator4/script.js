@@ -47,7 +47,7 @@ async function fetchImageByTag() {
     }
 
     const imageData = await response.json();
-    const image = imageData.images[0]; // Assuming there is only one image in the response
+    const image = imageData.images[0]; 
 
     updateImageElement(image);
     updateTagsContainer(image.tags);
