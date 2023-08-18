@@ -70,7 +70,6 @@ p {
   height: auto;
   object-fit: contain;
   max-height: 600px;
-  /* Adjust the max-height as needed */
 }
 
 #result .tags-container {
